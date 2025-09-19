@@ -1,97 +1,97 @@
-# IA Projects
+# Inteligência Artificial - Trabalho de Regressão e Classificação
 
-## Fala seus bando de mó limepeza, esse repo aqui é gnt fazer os trabalhos e passar nessa cadeira abençoada 👨🏻‍💻.
-Configuração do Ambiente
+Este repositório contém a implementação completa de um trabalho de Inteligência Artificial focado em **Modelos Preditivos** para **Regressão** e **Classificação**.
 
-Para garantir que todos os pacotes e dependências sejam instalados corretamente, siga os passos abaixo para configurar um ambiente virtual Python.
-### 1. Clonar o Repositório
+## 📋 Sobre o Trabalho
 
-Primeiro, clone este repositório em sua máquina local:
+O trabalho é composto por duas etapas principais que utilizam conceitos de IA baseados em modelos preditivos que realizam seu processo de aprendizagem através da minimização de uma função custo (loss function). Ambas as etapas utilizam o paradigma supervisionado para aprender a partir de pares (vetor de características e variável dependente).
 
-```bash
+## 🎯 Etapas do Trabalho
 
-git clone https://github.com/seu-usuario/IA-projects.git
-cd IA-projects
+### 1. **Tarefa de Regressão** (3,0 pts)
+- **Dados**: `aerogerador.dat` - Velocidade do vento vs. Potência gerada
+- **Modelos Implementados**:
+  - MQO Tradicional
+  - MQO Regularizado (Tikhonov) com λ = {0, 0.25, 0.5, 0.75, 1}
+  - Média de Valores Observáveis
+- **Validação**: Monte Carlo (R=500 rodadas, 80/20 split)
+- **Métrica**: Residual Sum of Squares (RSS)
+
+### 2. **Tarefa de Classificação** (7,0 pts)
+- **Dados**: `EMGsDataset.csv` - Sinais de eletromiografia facial (5 classes)
+- **Modelos Implementados**:
+  - MQO Tradicional
+  - Classificador Gaussiano Tradicional
+  - Classificador Gaussiano (Cov. de todo cj. treino)
+  - Classificador Gaussiano (Cov. Agregada)
+  - Classificador de Bayes Ingênuo
+  - Classificador Gaussiano Regularizado (Friedman) com λ = {0.25, 0.5, 0.75, 1.0}
+- **Validação**: Monte Carlo (R=500 rodadas, 80/20 split)
+- **Métrica**: Acurácia (Taxa de Acerto)
+
+## 📁 Estrutura do Projeto
+
+```
+├── data/
+│   ├── aerogerador.dat          # Dados de regressão
+│   └── EMGsDataset.csv          # Dados de classificação
+├── regrecao.py                  # Implementação completa da regressão
+├── regrecao_simples.py          # Versão simplificada da regressão
+├── classificacao.py             # Implementação completa da classificação
+├── resultados_regressao_aerogerador.txt    # Resultados da regressão
+├── resultados_classificacao_emg.txt        # Resultados da classificação
+├── requirements.txt             # Dependências do projeto
+└── README.md                    # Este arquivo
 ```
 
-### 2. Criar um Ambiente Virtual
+## 🚀 Como Executar
 
-#### Crie um ambiente virtual no diretório do projeto:
-
+### Pré-requisitos
 ```bash
-
-python3 -m venv venv
-```
-
-### 3. Ativar o Ambiente Virtual
-
-#### Ative o ambiente virtual que você acabou de criar:
-
-No Linux/MacOS:
-
-    source venv/bin/activate
-
-
-No Windows:
-
-    .\venv\Scripts\activate
-    
-
-### 4. Instalar as Dependências
-
-#### Com o ambiente virtual ativado, instale todas as dependências listadas no arquivo requirements.txt:
-
-```bash
-
 pip install -r requirements.txt
 ```
 
-### 5. Verificar a Instalação
-
-#### Para verificar se as dependências foram instaladas corretamente, você pode rodar qualquer um dos scripts Python do projeto:
-
+### Executar Regressão
 ```bash
-
-python Main.py
+python regrecao_simples.py
 ```
 
-### 6. Desativar o Ambiente Virtual
-
-#### Após terminar de trabalhar no projeto, você pode desativar o ambiente virtual com o comando:
-
+### Executar Classificação
 ```bash
-
-deactivate
+python classificacao.py
 ```
 
-## Instruções para execução dos algorítmos
+## 📊 Principais Resultados
 
-### Algoritmos de HC, GRS e LRS:
+### Regressão (Aerogerador)
+- **Melhor Modelo**: MQO Regularizado λ=0.25
+- **RSS Médio**: ~0.45
+- **Regularização**: Efetiva para λ ≤ 0.5
 
-#### Executar o arquivo Main.py
+### Classificação (EMG)
+- **Melhor Modelo**: Classificador Gaussiano Regularizado (Friedman λ=0.25)
+- **Acurácia**: 98.98% ± 0.09%
+- **Observação**: Modelos gaussianos superaram significativamente o MQO tradicional
 
-```bash
+## 🛠️ Tecnologias Utilizadas
 
-py .\Main.py
-```
+- **Python 3.x**
+- **NumPy**: Operações matemáticas e álgebra linear
+- **Matplotlib**: Visualizações e gráficos
+- **Algoritmos**: MQO, Regularização Tikhonov, Classificadores Gaussianos, Bayes Ingênuo
 
-### Algoritmo da Têmpera Simulada:
+## 📈 Características Técnicas
 
-#### Executar o arquivo TemperaClass.py
+- **Validação Robusta**: 500 simulações Monte Carlo
+- **Proteções**: Contra divisão por zero e matrizes singulares
+- **Visualizações**: Gráficos de dispersão, boxplots, histogramas
+- **Análise Estatística**: Média, desvio-padrão, valores min/max
+- **Documentação**: Código bem comentado e estruturado
 
-```bash
+## 👨‍💻 Autor
 
-py .\TemperaClass.py
-```
-### Algoritmos Genéticos:
+**Davi Alencar** - Trabalho de Inteligência Artificial
 
-#### Executar o arquivo GenClass.py
+## 📝 Licença
 
-```bash
-
-py .\GenClass.py
-```
-
-## Contribuição
-
-Vamo cuidar nessa bagaça, qqr coisa a gnt vai se falando pelo wpp. Final do ano a gnt toma essa gelada 🍻.
+Este projeto é parte de um trabalho acadêmico de Inteligência Artificial.
