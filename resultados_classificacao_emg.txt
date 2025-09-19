@@ -1,0 +1,18 @@
+RESULTADOS DA ANÁLISE DE CLASSIFICAÇÃO - EMG
+========================================================================================================================
+
+TABELA DE RESULTADOS (ACURÁCIA):
+========================================================================================================================
+Modelos                                                      Média           Desvio-Padrão   Maior Valor     Menor Valor    
+========================================================================================================================
+MQO tradicional                                              0.7241          0.0070          0.7440          0.7066         
+Classificador Gaussiano Tradicional                          0.9701          0.0018          0.9765          0.9640         
+Classificador Gaussiano (Cov. de todo cj. treino)            0.9624          0.0018          0.9686          0.9563         
+Classificador Gaussiano (Cov. Agregada)                      0.9624          0.0018          0.9686          0.9563         
+Classificador de Bayes Ingênuo                               0.7987          0.0037          0.8097          0.7886         
+Classificador Gaussiano Regularizado (Friedman λ=0,25)       0.9898          0.0009          0.9922          0.9871         
+Classificador Gaussiano Regularizado (Friedman λ=0,75)       0.9706          0.0016          0.9759          0.9649         
+========================================================================================================================
+
+Melhor modelo: Classificador Gaussiano Regularizado (Friedman λ=0,25)
+Pior modelo: MQO tradicional
